@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+$font-family-sans-serif: "Roboto Slab", serif;
+$border-radius: 0;
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.dropdown-btn {
+  transform: scale(0);
+  transition: 0.5s;
+}
+tr:hover {
+  .dropdown-btn {
+    transform: scale(1);
+  }
+}
+.bg-tr {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+// .side-bar {
+//   transform: translateX(-100%);
+//   transition: 0.5s;
+// }
+// .side-bar:active {
+//   transform: translateX(0);
+// }
