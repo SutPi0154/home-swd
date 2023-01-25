@@ -1,7 +1,7 @@
 // const x = window.prompt();
 // window.alert(x);
 
-// aera (width,bread)
+// area (width,bread)
 
 // const width = window.prompt(`Input Width`);
 // const bread = window.prompt(`Input Bread`);
@@ -77,3 +77,55 @@
 //   e.preventDefault();
 //   console.log(e);
 // });
+
+// const arr = ["apple", "orange", "banana", "lime"];
+// const obj = {
+//   brand: "apple",
+//   modal: "macbook pro",
+//   spec: {
+//     cpu: "i7",
+//     ram: "16G",
+//     ssd: "1TB",
+//   },
+// };
+// const j = `["apple", "orange", "banana", "lime"]`;
+// const j2 = `{
+//     "brand": "apple",
+//     "modal": "macbook pro",
+//     "spec": {
+//       "cpu": "i7",
+//       "ram": "16G",
+//       "ssd": "1TB"
+//    }
+//   }`;
+
+// // JSON to JavaScript
+// console.log(JSON.parse(j)[1]);
+// console.log(JSON.parse(j2).modal);
+
+// console.log(JSON.stringify(arr));
+// console.log(JSON.stringify(obj));
+
+function run() {
+  //   const req = new XMLHttpRequest();
+  //   // console.log(req);
+  //   req.open("GET", "https://fakestoreapi.com/products/");
+  //   req.send();
+  //   req.addEventListener("load", (event) => {
+  //     // console.log(event.target.responseText);
+  //     const data = JSON.parse(event.target.responseText);
+  //     console.log(data);
+  //   });
+
+  fetch("https://fakestoreapi.com/products/")
+    .then((data) => data.json())
+    .then((json) => console.log(json));
+}
+
+// document.cookie = "name=NangSianSut ";
+// document.cookie = "laptop=macBook";
+
+// localStorage.setItem("myName", "Sut Pi");
+// localStorage.setItem("MyAge", 19);
+
+// sessionStorage.setItem("nickName", "Sian sut");

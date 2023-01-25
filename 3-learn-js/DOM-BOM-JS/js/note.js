@@ -1,8 +1,8 @@
-const creatBtn = document.querySelector("#creatBtn");
+const creatBtn = document.querySelector("#createBtn");
 const lists = document.querySelector("#lists");
 const textInput = document.querySelector("#textInput");
 
-const creatLi = (text) => {
+const createLi = (text) => {
   const dyID = "flexCheck" + Date.now();
   const li = document.createElement("li");
   li.classList = "list-group-item d-flex align-items-center";
@@ -33,13 +33,13 @@ const creatLi = (text) => {
 // add lists button function
 const addList = () => {
   //   const text = textInput.value;
-  if (textInput.value.trixm()) {
-    lists.append(creatLi(textInput.value));
+  if (textInput.value.trim()) {
+    lists.append(createLi(textInput.value));
     textInput.value = null;
   } else alert("Input text is empty");
 };
 
-// lists.append(creatLi(`apple`));
+// lists.append(createLi(`apple`));
 
 creatBtn.addEventListener(`click`, addList);
 
