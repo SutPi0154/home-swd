@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 1000px;
+      }
+      /* h1{
+            color: rgb(55, 186, 237);
+        }
+        h1::before{
+            content: url(./images/images.jpeg);
+            content: "";
+            display: inline-block;
+            width: 50px;
+            height: 1em;
+            background-color: aqua;
+        }
+        h1::after{
+            content: " bbbb";
+        } */
+      /* .box{
+            width: 150px;
+            height: 150px;
+            background-color: skyblue;
+        } */
+
+      /* .box{
+            padding: 75px;
+            border-color: skyblue;
+            background-color: skyblue;
+            display: inline-block;
+        } */
+
+      /* .box {
+        border: 75px solid blue;
+        border-style: solid;
+        border-top-width: 100px;
+        border-left-width: 34px;
+        border-bottom-width: 23px;
+        border-right-width: 120px;
+        border-top-color: red;
+        border-bottom-color: green;
+        border-right-color: yellow;
+
+        display: inline-block;
+      } */
+      .box {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        background-color: skyblue;
+      }
+      .box::before {
+        content: "";
+        border: 50px solid black;
+        border-top-color: rgb(39, 146, 188);
+        border-left-color: rgb(39, 146, 188);
+        border-right-color: white;
+        border-bottom-color: white;
+        /* display: inline-block; */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+      .dialog {
+        /* display: inline-block; */
+        /* height: ; */
+        position: relative;
+        width: 350px;
+        background-color: pink;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .dialog h1{
+          margin: 0;
+        margin-bottom: 10px ;
+      }
+      .dialog p{
+        margin: 0;
+      }
+      .dialog::after{
+        content: "";
+        display: inline-block;
+        border: 10px solid rgb(255, 255, 255);
+        border-top-color: pink;
+        /* border-left-color:rgb(104, 232, 62);
+        border-right-color:  white;
+        border-bottom-color: white ; */
+        position: absolute;
+        bottom: -20px;
+        left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>hello</h1> -->
+    <div class="box"></div>
+    <hr />
+    <div class="dialog">
+      <h1>Hello Bro</h1>
+      <p>min ga lar par .....</p>
+    </div>
+  </body>
+</html>

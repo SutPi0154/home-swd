@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .sidebar {
+        background-color: gray;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        /* display: none; */
+        transition-duration: 0.5s;
+        transition-property: transform;
+      }
+      .sidebar.open::after{
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color:rgba(0, 0, 0, 0.719);
+      }
+      .sidebar.open {
+        /* display: block; */
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <button>show</button>
+    <h1>min ga lar apr</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate minus
+      dolorem laudantium, ipsa repellat corrupti sunt non ab, voluptas delectus
+      voluptatum reprehenderit, distinctio vel veniam id optio cum debitis nemo.
+    </p>
+
+    <div class="sidebar"></div>
+  </body>
+</html>

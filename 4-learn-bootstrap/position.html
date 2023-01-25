@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      /* position က ဘာမ မှပေးရင် default က static ဖြစ်ပြီး
+       z-index တို့ top right bottom left စသည့် property များ အလုပ် မလုပ်ပါ */
+
+      /* position absolute ပေးလျှင် 
+  1.  သူသည် static ပေါ်တွင် ထက်သွားသည် 
+  2.  d-block ပေးသော်လည်း သူသည် သူ၏ တတယ့် width နှင့် height ကသာ အလုပ်လုပ် သည် 
+      block မဖြစ်တော့ပဲ သူ၏အောက် က div ပေါ်တွင် ထက်သွားသည်် 
+  3.  အကယ်၍ div အားလုံး absolute ဖြစ်နေပါက z-index နှင့် အပေါ်အောက် ထိမ်းလို့ရသည် 
+      default z-index က 0 ဖြစ်ပြီး တန်ဖိုးကြီးလေလေ အပေါ်ရောက် ေလေလေ ဖြစ်သည်  
+  4.  position absolute က scroll ဆွဲရင် ပါသွားပါတယ်
+      top ,right ,bottom ,left ပေးလျှင် သူ၏ parent ကို ဂရုမစိုက်တော့ပဲ 
+      top ဆိုလျှင် body ကနေ တန််းဖိုးတတ်မှတ်် သွားသည်  
+  5.  top,right,bottom,left ကို 24px;အစရှိတော တန််ဖိုးများ သုံးပေးကြသည်*/
+
+      /* position fixed က scroll ဆွဲရင် မပါသွားပါ */
+      /* position fixed ; 
+         top: 0 ; 
+         ပေးပြီး nav များကိုထိန်းလေ့ရှိ  */
+
+  /*  posiotion : sticky ; 
+      sticky လို့ ပေးလိုက်လျှင် d-block ဖြစ်လျှင် width : 100% ပြန်ဖြစ်သည် 
+      သူ၏ parent အပေါ် မတည်ပြီး သူ၏ parent ပါလျှင်ပါ သွားသည်
+      sticky ပေးပြီး top : 10px ; ဆိုလျှင် သူ၏ parent top သို့ ေရာက်သည့် 
+      အခါမှ parent level မှ 10 px ကန်ကာအလုပ်လုပ်သွားသည်
+       */
+  /*  position : relative ; parent level သုံးတာများ
+
+      positon relative သည် ခြံခတ်ထား ရာ ၌ ပိုသုံးကျသည် 
+      အဓိက ခြံခတ် ခံရမည့် အကောင် က position : absolute ; ဖြစ်သည်
+       */
+
+      body {
+        height: 2000px;
+      }
+      .box {
+        height: 300px;
+        position: relative;
+        top:0;
+      }
+      .box1 {
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        /* right: 0; */
+      }
+      .box2 {
+        position: absolute;
+        top: 0;
+      }
+      .box3 {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box border border-3 border-primary m-5">
+      <div class="box1 p-5 bg-info"></div>
+      <div class="box2 p-4 bg-dark"></div>
+      <div class="box3 p-3 bg-secondary"></div>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dream {
+  width: 480px;
+  transition: 0.5s;
+  clip-rule: circle(100%);
+  animation: dreamAni 3s ease-in-out;
+  border-radius: 20px;
+}
+.dream:hover {
+  filter: contrast(120%);
+  /* backdrop-filter: blur(0) contrast(0%); */
+}
+.box {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff10;
+  /* backdrop-filter: blur(10px) contrast(120%); */
+}
+.card {
+  width: 700px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  margin-left: -50px;
+  position: relative;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  background-color: #ffffffbb;
+  transition: 1s;
+  animation: cardAni 1.5s ease-in-out 2 alternate;
+}
+.card::before {
+  content: "";
+  width: 900px;
+  height: 500px;
+  clip-path: circle(0% at 10px 10px);
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  z-index: -1;
+  transition: 0.5s;
+  color: #333333;
+  background: #00c6ff;
+  background: -webkit-linear-gradient(to right, #0072ffdd, #00c6ffdd);
+  background: linear-gradient(to right, #0072ffdd, #00c6ffdd);
+  animation: cb 4s ease-in;
+}
+.card:hover {
+  transform: translateY(-10px);
+  color: #ffffff;
+}
+.card:hover::before {
+  clip-path: circle(130% at 10px 10px);
+}
+
+.card:hover .heart {
+  color: #ffffff;
+}
+.card:hover .fb-btn {
+  background: #ffffff;
+  color: #0072ff;
+}
+
+.card-header {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-family: "Lobster", cursive;
+}
+.card-body {
+  font-size: 1.5em;
+  font-weight: lighter;
+  font-family: "Dancing Script", cursive;
+  line-height: 2;
+}
+
+.heart {
+  color: #00c6ff;
+  font-family: "Lobster", cursive;
+}
+
+.fb-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #00c6ff;
+  border-radius: 30px;
+  padding: 0 20px;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+@keyframes dreamAni {
+  0% {
+    transform: translate(-20px, -20px);
+    clip-path: circle(30% at 50px 50px);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+    clip-path: circle(130%);
+  }
+}
+
+@keyframes cardAni {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, -10px);
+  }
+  100% {
+    transform: translate(20px, 20px);
+  }
+}
+
+@keyframes cb {
+  0% {
+    clip-path: circle(0% at 50px 50px);
+  }
+  25% {
+    clip-path: circle(20% at 50px 50px);
+  }
+  50% {
+    clip-path: circle(10% at 50px 50px);
+  }
+  75% {
+    clip-path: circle(30% at 50px 50px);
+  }
+  100% {
+    clip-path: circle(0% at 50px 50px);
+  }
+}
