@@ -211,7 +211,8 @@ const renderProductDetailModal = () => {
 const renderProductCardByCategory = () => {
   const currentCategory = event.target.getAttribute("cat");
   if (currentCategory === "all") {
-    renderProductCard(products);
+    // renderProductCard(products);
+    console.log("click all");
   } else {
     renderProductCard(
       products.filter((product) => product.category === currentCategory)
@@ -221,6 +222,7 @@ const renderProductCardByCategory = () => {
   productCategories.querySelector(".active").classList.remove("active");
   // add new active
   event.target.classList.add("active");
+  console.log("you click btn");
 };
 
 const renderBySearch = (keyword) => {
@@ -252,21 +254,22 @@ window.addEventListener("scroll", (event) => {
     header.classList.remove("sticky-top");
   }
 });
-// app.addEventListener("click", (event) => {
-//   if (
-//     event.target.closest(".product-card") &&
-//     !event.target.classList.contains("add")
-//   ) {
-//     renderProductDetailModal();
-//   }
-//   if (event.target.classList.contains("cat")) {
-//     renderProductCardByCategory();
-//   }
-//   if (event.target.classList.contains("add")) {
-//     console.log("added");
-//   }
-// });
 
-// search.addEventListener("keyup", (event) => {
-//   renderBySearch(search.value);
-// });
+app.addEventListener("click", (event) => {
+  if (
+    event.target.closest(".product-card") &&
+    !event.target.classList.contains("add")
+  ) {
+    renderProductDetailModal();
+  }
+  if (event.target.classList.contains("cat")) {
+    renderProductCardByCategory();
+  }
+  if (event.target.classList.contains("add")) {
+    console.log("added");
+  }
+});
+
+search.addEventListener("keyup", (event) => {
+  renderBySearch(search.value);
+});
