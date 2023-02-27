@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
 
 const Products = () => {
@@ -210,6 +210,10 @@ const Products = () => {
       rating: { rate: 3.6, count: 145 },
     },
   ];
+  const [inputText, setTextInput] = useState("");
+  // const [inputText, setTextInput] = useState("");
+  // const [inputText, setTextInput] = useState("");
+  // const [inputText, setTextInput] = useState("");
   return (
     <div className=" d-flex flex-wrap justify-content-center gap-5">
       {products.map((product) => (
